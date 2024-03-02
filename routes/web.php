@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\HoroscopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,5 +35,7 @@ Route::get('/category/create',[CategoryController::class,'create'])->name('categ
 Route::get('/category/edit/{id}',[CategoryController::class,'edit'])->name('category.edit');
 Route::post('/category/store',[CategoryController::class,'store'])->name('category.store');
 Route::post('/category/update',[CategoryController::class,'update'])->name('category.update');
+
+Route::get('/horoscop/index',[HoroscopController::class,'index'])->name('horoscop.index');
 
 require __DIR__.'/auth.php';

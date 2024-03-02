@@ -11,9 +11,11 @@ class Horoscope extends Model
     use HasFactory;
     use HasApiTokens;
     protected $guarded = [];
+
     public function category(){
         return $this->belongsTo(Category::class);
     }
+    
     public function comments(){
         return $this->hasMany(Comment::class);
     }
