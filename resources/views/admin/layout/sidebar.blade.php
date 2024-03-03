@@ -54,8 +54,14 @@
           </li>
         </li><li class="nav-item">
             <a href="{{route('comment.index')}}" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="nav-icon fas fa-chart-pie"></i>
               <p>Yorumlar</p>
+            </a>
+          </li>
+        {{-- </li><li class="nav-item">
+            <a href="{{route('comment.update')}}" class="nav-link">
+                <i class="nav-icon fas fa-tree"></i>
+              <p>Yorum Düzenle</p>
             </a>
           </li>
 
@@ -490,7 +496,7 @@
               <i class="nav-icon far fa-circle text-info"></i>
               <p>Informational</p>
             </a>
-          </li>
+          </li> --}}
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

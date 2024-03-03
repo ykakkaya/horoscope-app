@@ -40,14 +40,13 @@
                     </div>
                     <div class="card-body">
                         <div class="form-group">
-                          <label for="name">Burç Kategorisi</label>
-                          <select name="category_id">
-                            @foreach ($category as $cat)
+                            <label>Burç Kategorisi</label>
+                            <select class="form-control select2" name="category_id" style="width: 100%;">
+                                @foreach ($category as $cat)
                                 <option value="{{$cat->id}}">{{$cat->name}}</option>
                             @endforeach
-
-                          </select>
-                        </div>
+                            </select>
+                          </div>
 
                     <div class="form-group">
                       <label for="date">Burç Tarih Aralığı</label>

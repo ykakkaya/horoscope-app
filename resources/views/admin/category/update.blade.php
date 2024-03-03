@@ -31,8 +31,9 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form role="form" action="{{route('category.update',$category->id)}}" method="Post" enctype="multipart/form-data">
+                <form role="form" action="{{route('category.update')}}" method="Post" enctype="multipart/form-data">
                     @csrf
+                    <input type="hidden" class="form-control"  name="id" value="{{$category->id}}">
                   <div class="card-body">
                     <div class="form-group">
                       <label for="name">Adı</label>

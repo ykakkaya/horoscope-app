@@ -33,6 +33,7 @@
                 <!-- form start -->
                 <form  action="{{route('horoscop.update')}}" method="Post" enctype="multipart/form-data">
                     @csrf
+                    <input type="hidden" class="form-control"  name="id" value="{{$horoscop->id}}">
                   <div class="card-body">
                     <div class="form-group">
                       <label for="name">Adı</label>
@@ -40,14 +41,13 @@
                     </div>
                     <div class="card-body">
                         <div class="form-group">
-                          <label for="name">Burç Kategorisi</label>
-                          <select name="category_id">
-                            @foreach ($category as $cat)
-                            <option value="{{$cat->id}}" {{$cat->id == $horoscop->category_id ? 'selected' : ''}}>{{$cat->name}}</option>
+                            <label>Burç Kategorisi</label>
+                            <select class="form-control select2" name="category_id" style="width: 100%;">
+                                @foreach ($category as $cat)
+                            <option  value="{{$cat->id}}" {{$cat->id == $horoscop->category_id ? 'selected' : ''}}>{{$cat->name}}</option>
                             @endforeach
-
-                          </select>
-                        </div>
+                            </select>
+                          </div>
 
                     <div class="form-group">
                       <label for="date">Burç Tarih Aralığı</label>

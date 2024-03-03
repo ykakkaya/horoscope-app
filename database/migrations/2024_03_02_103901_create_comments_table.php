@@ -16,6 +16,7 @@ return new class extends Migration
             $table->text('comment')->nullable();
             $table->boolean('is_active')->default(0);
             $table->foreignId('horoscope_id')->constrained()->onDelete('cascade');
+            $table->string('name')->nullable();
             $table->timestamps();
         });
     }

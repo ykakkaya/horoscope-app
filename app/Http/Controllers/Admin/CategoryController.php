@@ -79,14 +79,14 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        $category=Category::findorfail($id);
+        $category=Category::findorfail($request->id);
         if($request->hasFile('image')){
             $image=$request->file('image');
             $image_name=time().'.'.$image->getClientOriginalName();
             $image->move(public_path('images/category'),$image_name);
-            $image_path='images/category/'.$image_name;
+            $category->image='images/category/'.$image_name;
         };
 
         $category->update([
@@ -94,7 +94,6 @@ class CategoryController extends Controller
             'date'=>$request->date,
             'shortDescription'=>$request->shortDescription,
             'description'=>$request->description,
-            'image'=>$image_path ?? null,
         ]);
         $notification=array(
             'message'=>'Kategori Başarıyla Güncellendi',

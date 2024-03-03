@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\HoroscopController;
+use App\Http\Controllers\Admin\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,7 +46,7 @@ Route::post('/horoscope/update',[HoroscopController::class,'update'])->name('hor
 Route::get('/horoscop/destroy/{id}',[HoroscopController::class,'destroy'])->name('horoscop.destroy');
 
 Route::get('/comment/index',[CommentController::class,'index'])->name('comment.index');
-Route::get('/comment/edit/{id}',[CommentController::class,'edit'])->name('horoscop.edit');
+Route::get('/comment/edit/{id}',[CommentController::class,'edit'])->name('comment.edit');
 Route::post('/comment/update',[CommentController::class,'update'])->name('comment.update');
 Route::get('/comment/destroy/{id}',[CommentController::class,'destroy'])->name('comment.destroy');
 

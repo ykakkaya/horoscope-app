@@ -84,15 +84,16 @@ class HoroscopController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
+        $horoscop=Horoscope::findorfail($request->id);
         if($request->hasFile('image')){
             $image=$request->file('image');
             $image_name=time().'.'.$image->getClientOriginalName();
             $image->move(public_path('images/horoscope'),$image_name);
-            $image_path='images/horoscope/'.$image_name;
+            $horoscop->image='images/horoscope/'.$image_name;
         }
-        $horoscop=Horoscope::update([
+        $horoscop->update([
             'name'=>$request->name,
             'date'=>$request->date,
             'shortDescription'=>$request->shortDescription,
