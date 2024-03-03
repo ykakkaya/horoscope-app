@@ -14,7 +14,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories=Category::get();
-        
+
         return view('admin.category.index',compact('categories'));
     }
 
@@ -108,9 +108,11 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        $category=CAtegory::findorfail($id);
-        unlink($category->image);
+        $category=Category::findorfail($id);
+        if($category->image){
+             unlink($category->image);
+        }
         $category->delete();
-        return redirect()->route('category.index')->with();
+        return redirect()->route('category.index');
     }
 }

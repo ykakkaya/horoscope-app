@@ -138,6 +138,8 @@
     }
     @endif
    </script>
-
+<!--sweetAlert-->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="{{ asset('sweetAlert/code.js') }}"></script>
 </body>
 </html>

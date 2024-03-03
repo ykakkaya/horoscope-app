@@ -50,7 +50,7 @@
                   <td>{{$item->shortDescription}}</td>
                   <td><img src="{{$item->image}}" style="width: 20%"></td>
                   <td><a href="{{route('category.edit',$item->id)}}" class="btn btn-block btn-warning">Düzenle</a>
-                    <button type="button" class="btn btn-block btn-danger">Sil</button></td>
+                    <a href="{{route('category.destroy',$item->id)}}" id="delete" class="btn btn-block btn-danger">Sil</a></td>
                 </tr>
                     @endforeach
 
