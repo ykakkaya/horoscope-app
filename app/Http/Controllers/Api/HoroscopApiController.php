@@ -33,11 +33,12 @@ class HoroscopApiController extends Controller
      */
     public function show(string $id)
     {
-        $horoscope=Horoscope::findorfail($id)->with('category','comments')->first();
-        $data=[
-            'data'=>$horoscope,
-        ];
-        return response()->json($data);
+        $horoscope = Horoscope::with('category','comments')->findOrFail($id);
+            $data = [
+                'data' => $horoscope,
+            ];
+            return response()->json($data);
+
     }
 
     /**
