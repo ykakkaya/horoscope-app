@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\CategoryApiController;
+use App\Http\Controllers\Api\HoroscopApiController;
+use App\Http\Controllers\Api\CommentApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/category', [CategoryApiController::class, 'index']);
+Route::get('/category/{id}', [CategoryApiController::class, 'show']);
+Route::get('/horoscop', [HoroscopApiController::class, 'index']);
+Route::get('/horoscop/{id}', [HoroscopApiController::class, 'show']);
+Route::post('/comment', [CommentApiController::class, 'store']);
