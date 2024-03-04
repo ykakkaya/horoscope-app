@@ -58,6 +58,18 @@
               <p>Yorumlar</p>
             </a>
           </li>
+        </li>
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+        <li class="nav-item">
+             <a href="route('logout')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+              <p class="text">Çıkış Yap</p>
+            </a>
+          </li>
+
+        </form>
         {{-- </li><li class="nav-item">
             <a href="{{route('comment.update')}}" class="nav-link">
                 <i class="nav-icon fas fa-tree"></i>
